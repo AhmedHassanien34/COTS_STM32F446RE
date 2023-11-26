@@ -11,9 +11,10 @@
 /********************************************************************************************/
 /* Include libraries                                                                        */
 /********************************************************************************************/
-#include "stdint.h"
+#include <stdint.h>
 
-#include "Stm32F466xx.h"
+#include "../../LIB/Stm32F466xx.h"
+#include "../../LIB/Utils.h"
 
 /********************************************************************************************/
 /* Include Component Files                                                                  */
@@ -21,9 +22,6 @@
 #include "NVIC_config.h"
 #include "NVIC_private.h"
 #include "NVIC_interface.h"
-
-
-#include "Utils.h"
 
 void NVIC_vEnableInterrupt(Interrupt_t copy_eInterrupt)
 {
@@ -56,7 +54,7 @@ void NVIC_vSetInterruptPriority(Interrupt_t copy_eInterrupt,uint8_t copy_u8Prior
 {
 	if (copy_eInterrupt<0)
 	{
-		SCB->SHP[copy_eInterrupt+12]=copy_u8Priority<<4;
+		SCB->SHP[copy_eInterrupt+12] = copy_u8Priority << 4;
 	}
 	else if (copy_eInterrupt>=0)
 	{

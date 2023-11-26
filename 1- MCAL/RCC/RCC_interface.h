@@ -96,6 +96,9 @@ typedef enum {
 void RCC_AHB1EnableCLK(PeripheralAHB1_t peripheral);
 void RCC_AHB1DisableCLK(PeripheralAHB1_t peripheral);
 
+void RCC_AHB2EnableCLK(PeripheralAHB2_t peripheral);
+void RCC_AHB2DisableCLK(PeripheralAHB2_t peripheral);
+
 void RCC_APB1EnableCLK(PeripheralAPB1_t peripheral);
 void RCC_APB1DisableCLK(PeripheralAPB1_t peripheral);
 
